@@ -4,6 +4,14 @@
   "description": "Turn raw design tokens into a correct shadcn/ui + Tailwind v4 theme — without the spacing, radius, shadow and type drift.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blw10210/shadcn-token-bridge.git"
+  },
+  "homepage": "https://github.com/blw10210/shadcn-token-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/blw10210/shadcn-token-bridge/issues"
+  },
   "bin": {
     "shadcn-token-bridge": "dist/cli.js",
     "token-bridge": "dist/cli.js"
