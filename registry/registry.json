@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "token-bridge",
+  "homepage": "https://github.com/blw10210/token-bridge",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "token-bridge theme",
+      "description": "A drift-free shadcn/ui theme generated from design tokens by token-bridge. Replace the values with your own, or regenerate from a tokens file.",
+      "files": [
+        {
+          "path": "registry/theme/globals.css",
+          "type": "registry:file",
+          "target": "app/globals.css"
+        }
+      ]
+    }
+  ]
+}

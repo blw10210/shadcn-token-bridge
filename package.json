@@ -1,0 +1,40 @@
+{
+  "name": "token-bridge",
+  "version": "0.1.0",
+  "description": "Turn raw design tokens into a correct shadcn/ui + Tailwind v4 theme — without the spacing, radius, shadow and type drift.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "token-bridge": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "registry"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "clean": "rm -rf dist",
+    "test": "tsx src/core/color.test.ts",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "shadcn",
+    "tailwind",
+    "tailwindcss",
+    "design-tokens",
+    "oklch",
+    "theme",
+    "css-variables",
+    "claude-code"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
