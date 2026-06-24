@@ -91,6 +91,10 @@ There's a [skill](./.claude/skills/token-bridge) that teaches Claude Code when a
 
 This is the token + theming layer only. It doesn't port layouts or components — those are a visual spec to reimplement, not importable source. It won't invent values you didn't provide; it tells you what's missing instead.
 
+## Releasing
+
+CI runs the build and color tests on every push and PR ([`.github/workflows/ci.yml`](./.github/workflows/ci.yml)). Publishing is automated ([`.github/workflows/publish.yml`](./.github/workflows/publish.yml)): cut a GitHub Release tagged `vX.Y.Z` and the workflow builds, tests, and runs `npm publish --provenance`. Configure auth once — either trusted publishing on npmjs.com (no secret) or an `NPM_TOKEN` repo secret.
+
 ## License
 
 MIT

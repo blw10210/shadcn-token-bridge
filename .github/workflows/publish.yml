@@ -1,0 +1,37 @@
+name: Publish to npm
+
+# Publishes when you create a GitHub Release (tag like v0.1.0).
+# Auth options — pick ONE:
+#   A) Trusted publishing (recommended, no secrets): configure this repo as a
+#      trusted publisher on npmjs.com for the package, then the OIDC token below
+#      is enough — remove the NODE_AUTH_TOKEN line.
+#   B) Token: create an npm automation token and add it as the NPM_TOKEN repo
+#      secret (Settings → Secrets and variables → Actions).
+# Either way, --provenance attaches a verifiable build attestation to the release.
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # required for provenance + trusted publishing
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
