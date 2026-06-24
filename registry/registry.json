@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "token-bridge",
-  "homepage": "https://github.com/blw10210/token-bridge",
+  "name": "shadcn-token-bridge",
+  "homepage": "https://github.com/blw10210/shadcn-token-bridge",
   "items": [
     {
       "name": "theme",

@@ -1,9 +1,9 @@
-# token-bridge
+# shadcn-token-bridge
 
 Turn raw design tokens into a correct **shadcn/ui + Tailwind v4** theme — without the spacing, radius, shadow and type drift.
 
 ```bash
-npx token-bridge build tokens.json --out app/globals.css
+npx shadcn-token-bridge build tokens.json --out app/globals.css
 ```
 
 ## The problem
@@ -17,28 +17,30 @@ token-bridge fixes both. It reads your tokens, converts every color to OKLCH, an
 ## Install
 
 ```bash
-npm i -g token-bridge   # or just use npx
+npm i -g shadcn-token-bridge   # or just use npx
 ```
+
+After a global install the commands `shadcn-token-bridge` and the shorter alias `token-bridge` both work. The examples below use `npx shadcn-token-bridge`.
 
 ## Usage
 
 Start a tokens file (a complete light + dark starter covering the whole contract):
 
 ```bash
-token-bridge init                 # writes tokens.json
+npx shadcn-token-bridge init                 # writes tokens.json
 ```
 
 Edit the values, then generate:
 
 ```bash
-token-bridge build tokens.json --out app/globals.css
-token-bridge build tokens.json --print      # preview to stdout
+npx shadcn-token-bridge build tokens.json --out app/globals.css
+npx shadcn-token-bridge build tokens.json --print      # preview to stdout
 ```
 
 You can also feed it a **mockup's CSS** directly — any file with `:root { --x: … }` and `.dark { … }` blocks. Colors are converted; non-color values (shadows, custom spacing) pass through untouched:
 
 ```bash
-token-bridge build mockup.css --out app/globals.css
+npx shadcn-token-bridge build mockup.css --out app/globals.css
 ```
 
 ### The drift report

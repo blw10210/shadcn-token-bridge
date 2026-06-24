@@ -1,10 +1,11 @@
 {
-  "name": "token-bridge",
+  "name": "shadcn-token-bridge",
   "version": "0.1.0",
   "description": "Turn raw design tokens into a correct shadcn/ui + Tailwind v4 theme — without the spacing, radius, shadow and type drift.",
   "type": "module",
   "license": "MIT",
   "bin": {
+    "shadcn-token-bridge": "dist/cli.js",
     "token-bridge": "dist/cli.js"
   },
   "files": [
